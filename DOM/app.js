@@ -44,5 +44,37 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         p.style.color = color;
     });
+
+    // 5. Add a button and an empty div. When the button is clicked, add a span that contains your name to the empty div.
+    let nameButton = document.createElement('button');
+    nameButton.textContent = 'Name';
+    document.body.appendChild(nameButton);
+
+    let div = document.createElement('div');
+
+    nameButton.addEventListener('click', function () {
+        let span = document.createElement('span');
+        span.textContent = 'Shannon';
+        div.appendChild(span);
+        document.body.appendChild(div);
+    })
+
+    // 6. create an array containing the names of your friends
+    let friendArray = ['Lizzo', 'Tori', 'Jack', 'Kirk', 'Rachel', 'Jay', 'Ida', 'Sam', 'Kelley', 'Robyn'];
+    let counter = 0;
+
+    let friendBtn = document.getElementById('friend-btn');
+    let ul = document.getElementById('friend-list');
+    
+    // When the button is clicked, add each friend's name as an li to the ul on the page.
+    friendBtn.addEventListener('click', function () {
+        if (counter < friendArray.length) {
+            let li = document.createElement('li');
+            li.textContent = friendArray[counter];
+            ul.appendChild(li);                            
+            counter++;
+        }
+    })
+
 });
 
